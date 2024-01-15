@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error as mse
 from sklearn.metrics import mean_absolute_error as mae
 
 #原始資料
-NBApoints = pd.read_csv(r"C:\Users\student\Documents\KC\CSV\NBApoints.csv")
+NBApoints = pd.read_csv(r"D:\GitHub\Scikit_Learn-NBA\CSV\NBApoints.csv")
 #print('原始資料')
 #NBApoints.info()
 
@@ -17,7 +17,6 @@ encoded_Tm = label_encoder.fit_transform(NBApoints['Tm'])
 
 X =pd.DataFrame([encoded_Pos, NBApoints['Age'], encoded_Tm]).T
 y = NBApoints['3P']
-
 
 lm = LinearRegression()
 lm.fit(X, y)
